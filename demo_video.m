@@ -25,9 +25,7 @@ opts.tol = 1e-3;
 opts.trunc = 0.3;
 
 % Video inpainting
-tic
 X = LRTF(Y,W,opts);
-toc
 psnr = PSNR(I,X,double(~W));
 fprintf('PSNR achieved by LRTF is %d dB\n',psnr);
 figure(1);
