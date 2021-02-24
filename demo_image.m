@@ -6,7 +6,7 @@ addpath(genpath('Utilities'));
 
 I=double(imread('1.jpg'));   
 
-% Scenario generation
+%% Scenario generation 
 [m1,m2,m3] = size(I); 
 sampling_ratio = 0.15;
 omega = find(rand(m1 * m2 * m3,1) < sampling_ratio); % locations of the available entries.
