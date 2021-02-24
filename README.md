@@ -1,6 +1,6 @@
 # LRMF-LRTF
 
-Logarithmic Norm Regularized Low-Rank Factorization for Matrix and Tensor Completion
+Logarithmic Norm Regularized Low-Rank Factorization for Matrix and Tensor Completion.
 
 Matlab code for "Logarithmic Norm Regularized Low-Rank Factorization for Matrix and Tensor Completion", accepted by IEEE Transactions on Image Processing, 2021. 
 
