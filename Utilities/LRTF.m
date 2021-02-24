@@ -35,7 +35,7 @@ even = (mod(m3,2) == 0);
 X1 = randn(m1,rank,m3);  X1f = fft(X1,[],3);  
 X2 = randn(rank,m2,m3);  X2f = fft(X2,[],3);
 if trunc ~= 1
-  %% Truncating the ranks of frontal slices (2~m3), but don't change the value of the tensor's tubal rank
+  % Truncating the ranks of frontal slices (2~m3), but don't change the value of the tensor's tubal rank
   for i = 2 : m3
     [u1,s1,v1] = svds(X1f(:,:,i),floor(trunc * rank));
     X1f(:,:,i) = u1 * s1 * v1';
