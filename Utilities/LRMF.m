@@ -18,14 +18,14 @@ function [X] = LRMF(Y,W,opts)
 % Written by Lin Chen (linchenee@sjtu.edu.cn)
 %
 
-if isfield(opts,'lambda');    lambda = opts.lambda;       else lambda = 3e6;   end
-if isfield(opts,'rank');      rank = opts.rank;           else rank = 25;      end 
-if isfield(opts,'epsilon');   epsilon = opts.epsilon;     else epsilon = 1e3;  end  
-if isfield(opts,'eta');       eta = opts.eta;             else eta = 1;        end 
-if isfield(opts,'max_iter');  max_iter = opts.max_iter;   else max_iter = 500; end   
-if isfield(opts,'tol');       tol = opts.tol;             else tol = 1e-3;     end  
+if isfield(opts,'lambda');    lambda = opts.lambda;       else lambda = 3e6;    end
+if isfield(opts,'rank');      rank = opts.rank;           else rank = 25;       end 
+if isfield(opts,'epsilon');   epsilon = opts.epsilon;     else epsilon = 1e3;   end  
+if isfield(opts,'eta');       eta = opts.eta;             else eta = 1;         end 
+if isfield(opts,'max_iter');  max_iter = opts.max_iter;   else max_iter = 500;  end   
+if isfield(opts,'tol');       tol = opts.tol;             else tol = 1e-3;      end  
 
-[m1,m2]=size(Y); 
+[m1,m2] = size(Y); 
 
 %% Initialization
 X1 = randn(m1,rank);  X1_old = X1;
@@ -69,7 +69,7 @@ for i = 1 : max_iter
   end
 end
 
-X=X1 * X2;
+X = X1 * X2;
 
 end
     
