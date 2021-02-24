@@ -118,7 +118,7 @@ for i = 1 : max_iter
   A2 = X2f_extrapol(:,:,1) - (X1f(:,:,1))' * Temp4(:,:,1) ./ mu(2);
   X2f(:,:,1) = proximal_log(A2,lambda / mu(2),epsilon);
   for j = 2 : half  
-    A2 = X2f_extrapol(:,:,j) - (X1f(:,:,j))' * Temp4(:,:,j)./ mu(2);
+    A2 = X2f_extrapol(:,:,j) - (X1f(:,:,j))' * Temp4(:,:,j) ./ mu(2);
     X2f(:,:,j) = proximal_log(A2,lambda / mu(2),epsilon);
     X2f(:,:,m3-j+2) = conj(X2f(:,:,j));
   end
