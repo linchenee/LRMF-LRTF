@@ -31,7 +31,7 @@ if isfield(opts,'trunc');     trunc = opts.trunc;        else trunc = 1;      en
 half = round(m3/2);
 even = (mod(m3,2) == 0);
 
-%% Initialization 
+% Initialization 
 X1 = randn(m1,rank,m3);  X1f = fft(X1,[],3);  
 X2 = randn(rank,m2,m3);  X2f = fft(X2,[],3);
 if trunc ~= 1
@@ -51,7 +51,7 @@ mu_old = mu;
 mu_min = 1e-2;
 t_old = 1;
    
-%% Iteration
+% Iteration
 for i = 1 : max_iter  
 %  if mod(i,10) == 1     
   t = (1 + sqrt(1 + 4 * t_old^2)) / 2;
@@ -59,7 +59,7 @@ for i = 1 : max_iter
   t_old = t; 
 %  end
         
-  %% Update X1f
+  % Update X1f
   w = min(temp,sqrt(mu_old(1) / mu(1)));
   X1f_extrapol = X1f + w * (X1f - X1f_old); % extrapolated point
   X1f_old = X1f;  
@@ -94,7 +94,7 @@ for i = 1 : max_iter
         
   tols(1) =  norm(X1f(:) - X1f_old(:),'fro') / norm(X1f_old(:),'fro');
         
-  %% Update X2f
+  % Update X2f
   w = min(temp,sqrt(mu_old(2) / mu(2)));
   X2f_extrapol = X2f + w * (X2f - X2f_old);  % extrapolated point
   X2f_old = X2f;  
@@ -129,7 +129,7 @@ for i = 1 : max_iter
        
   tols(2) = norm(X2f(:) - X2f_old(:),'fro') / norm(X2f_old(:),'fro');
 
-  %% Stop if the termination condition is met
+  % Stop if the termination condition is met
   if (mean(tols)) < tol
      fprintf('Iteration number of LRTF is %d\n',i);
      break;
